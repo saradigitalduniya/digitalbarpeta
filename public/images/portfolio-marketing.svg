@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%" fill="none">
+  <rect width="800" height="500" fill="#07110D" />
+  <radialGradient id="mkGlow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#EC4899" stop-opacity="0.25" />
+    <stop offset="100%" stop-color="#050505" stop-opacity="0" />
+  </radialGradient>
+  <rect width="800" height="500" fill="url(#mkGlow)" />
+  
+  <rect x="80" y="50" width="640" height="400" rx="16" fill="#0B1F17" stroke="#EC4899" stroke-width="1.5" stroke-opacity="0.4" />
+  
+  <g transform="translate(120, 80)">
+    <!-- AI Funnel Visualization -->
+    <rect x="0" y="0" width="560" height="200" rx="12" fill="#182721" stroke="#EC4899" stroke-width="1"/>
+    
+    <text x="25" y="35" font-family="sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">AI-Powered Omni-Channel Funnel</text>
+    <text x="25" y="55" font-family="sans-serif" font-size="11" fill="#A1A1AA">Multi-channel lead ingestion with automated neural qualification</text>
+
+    <!-- Stage 1 -->
+    <rect x="25" y="80" width="110" height="90" rx="8" fill="#0E1726" stroke="#38BDF8" stroke-width="1"/>
+    <text x="35" y="105" font-family="sans-serif" font-size="9" fill="#A1A1AA">IMPRESSIONS</text>
+    <text x="35" y="130" font-family="sans-serif" font-size="18" font-weight="bold" fill="#38BDF8">2.4M</text>
+    <text x="35" y="150" font-family="sans-serif" font-size="9" fill="#22C55E">+180% QoQ</text>
+
+    <!-- Arrow -->
+    <path d="M145 125 L165 125" stroke="#EC4899" stroke-width="2"/>
+
+    <!-- Stage 2 -->
+    <rect x="175" y="80" width="110" height="90" rx="8" fill="#0E1726" stroke="#8B5CF6" stroke-width="1"/>
+    <text x="185" y="105" font-family="sans-serif" font-size="9" fill="#A1A1AA">ENGAGEMENT</text>
+    <text x="185" y="130" font-family="sans-serif" font-size="18" font-weight="bold" fill="#C4B5FD">142K</text>
+    <text x="185" y="150" font-family="sans-serif" font-size="9" fill="#10B981">6.2% CTR</text>
+
+    <!-- Arrow -->
+    <path d="M295 125 L315 125" stroke="#EC4899" stroke-width="2"/>
+
+    <!-- Stage 3 -->
+    <rect x="325" y="80" width="110" height="90" rx="8" fill="#0E1726" stroke="#EC4899" stroke-width="1"/>
+    <text x="335" y="105" font-family="sans-serif" font-size="9" fill="#A1A1AA">AI LEADS</text>
+    <text x="335" y="130" font-family="sans-serif" font-size="18" font-weight="bold" fill="#F472B6">4,890</text>
+    <text x="335" y="150" font-family="sans-serif" font-size="9" fill="#10B981">Score &gt; 85</text>
+
+    <!-- Arrow -->
+    <path d="M445 125 L465 125" stroke="#EC4899" stroke-width="2"/>
+
+    <!-- Stage 4 -->
+    <rect x="475" y="80" width="70" height="90" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+    <text x="483" y="105" font-family="sans-serif" font-size="8" fill="#A7F3D0">REVENUE</text>
+    <text x="483" y="130" font-family="sans-serif" font-size="15" font-weight="bold" fill="#22C55E">3.2x</text>
+    <text x="483" y="150" font-family="sans-serif" font-size="8" fill="#FFFFFF">ROI</text>
+
+    <!-- Bottom Metrics -->
+    <g transform="translate(0, 220)">
+      <rect x="0" y="0" width="265" height="100" rx="10" fill="#0A1612" stroke="#1F2937" stroke-width="1"/>
+      <text x="20" y="35" font-family="sans-serif" font-size="11" fill="#A1A1AA">AUTONOMOUS BOT RESPONSES</text>
+      <text x="20" y="70" font-family="sans-serif" font-size="24" font-weight="900" fill="#FFFFFF">98.4%</text>
+      <text x="20" y="90" font-family="sans-serif" font-size="10" fill="#10B981">&lt; 30s Resolution</text>
+
+      <rect x="295" y="0" width="265" height="100" rx="10" fill="#0A1612" stroke="#1F2937" stroke-width="1"/>
+      <text x="315" y="35" font-family="sans-serif" font-size="11" fill="#A1A1AA">COST PER ACQUISITION (CPA)</text>
+      <text x="315" y="70" font-family="sans-serif" font-size="24" font-weight="900" fill="#22C55E">-42.5%</text>
+      <text x="315" y="90" font-family="sans-serif" font-size="10" fill="#38BDF8">Lower Customer Acquisition</text>
+    </g>
+  </g>
+</svg>
