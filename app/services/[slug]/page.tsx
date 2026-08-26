@@ -12,7 +12,7 @@ import {
   MessageCircle,
 } from 'lucide-react';
 import { servicesData } from '@/data/services';
-import { siteConfig } from '@/data/config';
+import { siteConfig, SITE_URL } from '@/data/config';
 import { Navbar } from '@/components/navigation/Navbar';
 import { Footer } from '@/components/footer/Footer';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
@@ -45,13 +45,13 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     title,
     description,
     alternates: {
-      canonical: `https://digitalbarpeta.com/services/${service.slug}`,
+      canonical: `${SITE_URL}/services/${service.slug}`,
     },
     openGraph: {
       type: 'website',
       title,
       description,
-      url: `https://digitalbarpeta.com/services/${service.slug}`,
+      url: `${SITE_URL}/services/${service.slug}`,
       siteName: 'Digital Barpeta',
       images: [
         {
@@ -87,12 +87,12 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
         '@type': 'Service',
         name: service.title,
         description: service.fullDescription,
-        url: `https://digitalbarpeta.com/services/${service.slug}`,
+        url: `${SITE_URL}/services/${service.slug}`,
         provider: {
           '@type': 'Organization',
           name: siteConfig.brandName,
-          url: 'https://digitalbarpeta.com',
-          logo: 'https://digitalbarpeta.com/logo/digital_barpeta_logo.png',
+          url: SITE_URL,
+          logo: `${SITE_URL}/logo/digital_barpeta_logo.png`,
         },
         serviceType: service.title,
         areaServed: {
@@ -107,19 +107,19 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://digitalbarpeta.com',
+            item: SITE_URL,
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Services',
-            item: 'https://digitalbarpeta.com/services',
+            item: `${SITE_URL}/services`,
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: service.title,
-            item: `https://digitalbarpeta.com/services/${service.slug}`,
+            item: `${SITE_URL}/services/${service.slug}`,
           },
         ],
       },

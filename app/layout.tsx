@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
-import { siteConfig } from '@/data/config';
+import { siteConfig, SITE_URL } from '@/data/config';
 
 export const viewport: Viewport = {
   themeColor: '#050505',
@@ -10,7 +10,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://digitalbarpeta.com'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Digital Barpeta | Digital Marketing & Technology Agency',
     template: '%s | Digital Barpeta',
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     'Digital Growth Strategy',
     'Digital Barpeta Assam',
   ],
-  authors: [{ name: 'Digital Barpeta', url: 'https://digitalbarpeta.com' }],
+  authors: [{ name: 'Digital Barpeta', url: SITE_URL }],
   creator: 'Digital Barpeta',
   publisher: 'Digital Barpeta',
   applicationName: 'Digital Barpeta',
   manifest: '/site.webmanifest',
   alternates: {
-    canonical: 'https://digitalbarpeta.com',
+    canonical: SITE_URL,
   },
   formatDetection: {
     email: false,
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://digitalbarpeta.com',
+    url: SITE_URL,
     title: 'Digital Barpeta | Digital Marketing & Technology Agency',
     description:
       'Digital Barpeta helps businesses grow online through SEO, web design, AI marketing, software, app development, branding and digital marketing solutions.',
@@ -98,11 +98,11 @@ const structuredData = {
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': 'https://digitalbarpeta.com/#organization',
+      '@id': `${SITE_URL}/#organization`,
       name: siteConfig.brandName,
-      url: 'https://digitalbarpeta.com',
-      logo: 'https://digitalbarpeta.com/logo/digital_barpeta_logo.png',
-      image: 'https://digitalbarpeta.com/character/digital_barpeta_character.png',
+      url: SITE_URL,
+      logo: `${SITE_URL}/logo/digital_barpeta_logo.png`,
+      image: `${SITE_URL}/character/digital_barpeta_character.png`,
       description: siteConfig.fullDescription,
       email: siteConfig.contact.email,
       telephone: siteConfig.contact.phone,
@@ -125,11 +125,11 @@ const structuredData = {
     },
     {
       '@type': ['LocalBusiness', 'ProfessionalService'],
-      '@id': 'https://digitalbarpeta.com/#localbusiness',
+      '@id': `${SITE_URL}/#localbusiness`,
       name: siteConfig.brandName,
-      url: 'https://digitalbarpeta.com',
-      logo: 'https://digitalbarpeta.com/logo/digital_barpeta_logo.png',
-      image: 'https://digitalbarpeta.com/character/digital_barpeta_character.png',
+      url: SITE_URL,
+      logo: `${SITE_URL}/logo/digital_barpeta_logo.png`,
+      image: `${SITE_URL}/character/digital_barpeta_character.png`,
       description: siteConfig.fullDescription,
       telephone: siteConfig.contact.phone,
       email: siteConfig.contact.email,
@@ -142,12 +142,12 @@ const structuredData = {
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://digitalbarpeta.com/#website',
-      url: 'https://digitalbarpeta.com',
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
       name: siteConfig.brandName,
       description: siteConfig.shortDescription,
       publisher: {
-        '@id': 'https://digitalbarpeta.com/#organization',
+        '@id': `${SITE_URL}/#organization`,
       },
     },
   ],

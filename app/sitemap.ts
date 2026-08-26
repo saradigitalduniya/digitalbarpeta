@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next';
 import { blogPosts } from '@/data/blog';
 import { servicesData } from '@/data/services';
+import { SITE_URL } from '@/data/config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://digitalbarpeta.com';
+  const baseUrl = SITE_URL;
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {

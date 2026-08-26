@@ -68,3 +68,8 @@ export const siteConfig: BrandConfig = {
     youtube: '#',
   },
 };
+
+// Global canonical production website URL
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://digitalbarpeta.vercel.app';
+

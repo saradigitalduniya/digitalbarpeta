@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
 import { servicesData } from '@/data/services';
+import { SITE_URL } from '@/data/config';
 import { Navbar } from '@/components/navigation/Navbar';
 import { Footer } from '@/components/footer/Footer';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
@@ -12,11 +13,11 @@ export const metadata: Metadata = {
   description:
     'Explore Digital Barpeta’s 8 primary digital agency services: SEO, web design, AI marketing, software development, branding, digital marketing, optimization, and maintenance.',
   alternates: {
-    canonical: 'https://digitalbarpeta.com/services',
+    canonical: `${SITE_URL}/services`,
   },
   openGraph: {
     type: 'website',
-    url: 'https://digitalbarpeta.com/services',
+    url: `${SITE_URL}/services`,
     title: 'Digital Services & Technology Solutions | Digital Barpeta',
     description:
       'Explore Digital Barpeta’s 8 primary digital agency services: SEO, web design, AI marketing, software development, branding, digital marketing, optimization, and maintenance.',
@@ -50,7 +51,7 @@ const serviceListSchema = {
     position: index + 1,
     name: service.title,
     description: service.shortDescription,
-    url: `https://digitalbarpeta.com/services/${service.slug}`,
+    url: `${SITE_URL}/services/${service.slug}`,
   })),
 };
 

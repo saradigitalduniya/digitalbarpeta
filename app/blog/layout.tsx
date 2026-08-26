@@ -1,15 +1,16 @@
 import { Metadata } from 'next';
+import { SITE_URL } from '@/data/config';
 
 export const metadata: Metadata = {
   title: 'Digital Growth Journal & Insights | Digital Barpeta',
   description:
     'Actionable perspectives on modern web engineering, organic search domination, AI automation, and high-impact brand strategy by Digital Barpeta.',
   alternates: {
-    canonical: 'https://digitalbarpeta.com/blog',
+    canonical: `${SITE_URL}/blog`,
   },
   openGraph: {
     type: 'website',
-    url: 'https://digitalbarpeta.com/blog',
+    url: `${SITE_URL}/blog`,
     title: 'Digital Growth Journal & Insights | Digital Barpeta',
     description:
       'Actionable perspectives on modern web engineering, organic search domination, AI automation, and high-impact brand strategy by Digital Barpeta.',

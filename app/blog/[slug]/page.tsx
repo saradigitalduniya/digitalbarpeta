@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ChevronLeft, Clock, Calendar, ArrowRight, Sparkles } from 'lucide-react';
 import { blogPosts } from '@/data/blog';
-import { siteConfig } from '@/data/config';
+import { siteConfig, SITE_URL } from '@/data/config';
 import { Navbar } from '@/components/navigation/Navbar';
 import { Footer } from '@/components/footer/Footer';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
@@ -41,13 +41,13 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
     keywords: post.tags,
     authors: [{ name: post.author.name }],
     alternates: {
-      canonical: `https://digitalbarpeta.com/blog/${post.slug}`,
+      canonical: `${SITE_URL}/blog/${post.slug}`,
     },
     openGraph: {
       type: 'article',
       title,
       description,
-      url: `https://digitalbarpeta.com/blog/${post.slug}`,
+      url: `${SITE_URL}/blog/${post.slug}`,
       siteName: 'Digital Barpeta',
       images: [
         {
@@ -81,7 +81,7 @@ export default function SingleBlogPost({ params }: BlogPostProps) {
         '@type': 'BlogPosting',
         headline: post.title,
         description: post.excerpt,
-        url: `https://digitalbarpeta.com/blog/${post.slug}`,
+        url: `${SITE_URL}/blog/${post.slug}`,
         datePublished: '2026-02-01T00:00:00+05:30',
         dateModified: '2026-02-01T00:00:00+05:30',
         author: {
@@ -92,10 +92,10 @@ export default function SingleBlogPost({ params }: BlogPostProps) {
         publisher: {
           '@type': 'Organization',
           name: siteConfig.brandName,
-          url: 'https://digitalbarpeta.com',
-          logo: 'https://digitalbarpeta.com/logo/digital_barpeta_logo.png',
+          url: SITE_URL,
+          logo: `${SITE_URL}/logo/digital_barpeta_logo.png`,
         },
-        image: 'https://digitalbarpeta.com/og-image.png',
+        image: `${SITE_URL}/og-image.png`,
         keywords: post.tags.join(', '),
         articleSection: post.category,
       },
@@ -106,19 +106,19 @@ export default function SingleBlogPost({ params }: BlogPostProps) {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://digitalbarpeta.com',
+            item: SITE_URL,
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Blog',
-            item: 'https://digitalbarpeta.com/blog',
+            item: `${SITE_URL}/blog`,
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: post.title,
-            item: `https://digitalbarpeta.com/blog/${post.slug}`,
+            item: `${SITE_URL}/blog/${post.slug}`,
           },
         ],
       },
