@@ -283,7 +283,7 @@ export const SeoAuditSection: React.FC = () => {
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 bg-dark-green/80 border border-brand-green/40 p-6 rounded-2xl">
                   <div>
                     <h4 className="text-base font-bold text-white">
-                      Ready to fix these issues and rank #1?
+                      Ready to fix these issues and improve your search rankings?
                     </h4>
                     <p className="text-xs text-brand-muted mt-0.5">
                       Let our engineering and SEO team execute a complete overhaul.

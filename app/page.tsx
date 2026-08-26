@@ -64,7 +64,7 @@ export default function HomePage() {
       {/* Section 05: Portfolio & Work Showcase */}
       <PortfolioSection />
 
-      {/* Section 06: Measurable Impact & Verified Counters */}
+      {/* Section 06: Trust & Value Pillars */}
       <ResultsSection />
 
       {/* Section 07: Target Industries */}

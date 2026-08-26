@@ -36,7 +36,7 @@ export const portfolioData: PortfolioItem[] = [
     description: 'High-speed headless commerce architecture with instant catalog filtering, mobile-first checkout, and global CDN delivery.',
     client: 'E-Commerce Showcase Prototype',
     technology: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe', 'Framer Motion'],
-    results: 'Sub-second page rendering & optimized checkout flow',
+    results: 'Fast-loading page rendering & optimized checkout flow',
     image: '/images/portfolio-ecommerce.svg',
     accentColor: '#10B981',
     demoUrl: '#',
@@ -110,6 +110,6 @@ export const portfolioData: PortfolioItem[] = [
     image: '/images/portfolio-optimization.svg',
     accentColor: '#F59E0B',
     demoUrl: '#',
-    highlights: ['100/100 Lighthouse standards', 'Zero layout shift', 'Clean code structure'],
+    highlights: ['Core Web Vitals focused', 'Zero layout shift', 'Clean code structure'],
   },
 ];

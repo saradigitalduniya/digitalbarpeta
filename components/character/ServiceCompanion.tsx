@@ -104,7 +104,7 @@ export const ServiceCompanion: React.FC<ServiceCompanionProps> = ({ activeType }
                 ⚡
               </div>
               <div>
-                <p className="text-[11px] font-bold text-white">Sub-Second Speed</p>
+                <p className="text-[11px] font-bold text-white">Fast-Loading Speed</p>
                 <p className="text-[9px] text-brand-muted">Core Web Vitals</p>
               </div>
             </motion.div>

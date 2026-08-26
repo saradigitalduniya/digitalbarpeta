@@ -69,7 +69,7 @@ Collaborate with local news, business chambers, and community organizations to b
     },
     tags: ['Performance', 'Core Web Vitals', 'Next.js', 'Conversions'],
     content: `
-## The Anatomy of a Sub-Second Website
+## The Anatomy of Fast-Loading Websites
 
 Modern consumers expect instant gratification. When a page takes longer than 2.5 seconds to load, bounce rates skyrocket.
 

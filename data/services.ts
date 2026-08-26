@@ -67,7 +67,7 @@ export const servicesData: ServiceItem[] = [
       'We engineer bespoke web applications and high-converting business websites with ultra-fast loading speeds, sleek dark-mode aesthetics, fluid mobile responsiveness, and clean modern code architecture.',
     deliverables: [
       'Bespoke Visual UI/UX & Responsive Layouts',
-      'Sub-Second Page Speed Architecture',
+      'Fast-Loading Page Architecture',
       'Dynamic CMS Integration (Next.js / WordPress)',
       'Conversion-Optimized Inquiry Funnels & Forms',
       'Cross-Browser & Multi-Device Quality Assurance',
@@ -246,7 +246,7 @@ export const servicesData: ServiceItem[] = [
       { step: '01', title: 'Performance Benchmark', desc: 'Run deep synthetic and real-user speed diagnostics.' },
       { step: '02', title: 'Payload Minimization', desc: 'Prune unused libraries, optimize images, and streamline code.' },
       { step: '03', title: 'Code & Cache Tuning', desc: 'Configure browser caching, compression, and critical CSS rendering.' },
-      { step: '04', title: 'Post-Optimization Audit', desc: 'Verify 90+ Lighthouse score and smooth user interaction.' },
+      { step: '04', title: 'Post-Optimization Audit', desc: 'Verify Core Web Vitals compliance and smooth user interaction.' },
     ],
     cta: 'EXPLORE SERVICE →',
     icon: 'Gauge',

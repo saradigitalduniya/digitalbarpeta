@@ -28,13 +28,6 @@ export interface BrandConfig {
     twitter: string;
     youtube: string;
   };
-  stats: {
-    projects: string;
-    businesses: string;
-    websites: string;
-    solutions: string;
-    notice: string;
-  };
 }
 
 // Master Central Configuration - Single Source of Truth
@@ -73,13 +66,5 @@ export const siteConfig: BrandConfig = {
     },
     twitter: '#',
     youtube: '#',
-  },
-
-  stats: {
-    projects: '00+',
-    businesses: '00+',
-    websites: '00+',
-    solutions: '00+',
-    notice: 'Official metrics will update dynamically upon verified reporting.',
   },
 };

@@ -24,11 +24,11 @@ const whyCards = [
   },
   {
     title: 'BUILT FOR PERFORMANCE',
-    tagline: 'Fast, responsive and optimized digital solutions.',
-    description: 'Speed is non-negotiable. We engineer clean, modular Next.js code that achieves sub-second load times, flawless mobile responsiveness, and 100/100 Google Core Web Vitals performance scores.',
+    tagline: 'Fast, responsive and technically optimized digital solutions.',
+    description: 'Speed is non-negotiable. We engineer clean, modular Next.js code focused on fast-loading architecture, responsive design across devices, and Core Web Vitals optimization.',
     icon: Zap,
     accent: '#38BDF8',
-    features: ['Sub-second edge caching', 'Zero Cumulative Layout Shift', '100% Mobile responsiveness'],
+    features: ['Fast-loading architecture', 'Core Web Vitals focused', 'Responsive across devices'],
   },
   {
     title: 'MADE TO GROW',
