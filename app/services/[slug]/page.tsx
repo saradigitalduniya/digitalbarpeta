@@ -12,8 +12,10 @@ import {
   MessageCircle,
   Users,
   HelpCircle,
+  FolderGit2,
 } from 'lucide-react';
-import { servicesData } from '@/data/services';
+import { servicesData, ServiceItem } from '@/data/services';
+import { portfolioData } from '@/data/portfolio';
 import { siteConfig, SITE_URL } from '@/data/config';
 import { Navbar } from '@/components/navigation/Navbar';
 import { Footer } from '@/components/footer/Footer';
@@ -25,14 +27,32 @@ interface ServicePageProps {
   };
 }
 
+// Slug alias mapper to ensure legacy URLs never 404
+const slugAliases: Record<string, string> = {
+  'software-app-development': 'android-development',
+  'logo-branding': 'branding',
+  'ai-marketing': 'digital-marketing',
+  optimization: 'seo',
+  maintenance: 'web-development',
+};
+
+function getServiceBySlug(slug: string): ServiceItem | undefined {
+  const targetSlug = slugAliases[slug] || slug;
+  return servicesData.find((s) => s.slug === targetSlug);
+}
+
 export async function generateStaticParams() {
-  return servicesData.map((service) => ({
+  const primarySlugs = servicesData.map((service) => ({
     slug: service.slug,
   }));
+  const aliasSlugs = Object.keys(slugAliases).map((alias) => ({
+    slug: alias,
+  }));
+  return [...primarySlugs, ...aliasSlugs];
 }
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
-  const service = servicesData.find((s) => s.slug === params.slug);
+  const service = getServiceBySlug(params.slug);
 
   if (!service) {
     return {
@@ -61,7 +81,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
           url: '/og-image.png',
           width: 1200,
           height: 630,
-          alt: `${service.title} - Digital Barpeta Assam`,
+          alt: `${service.title} - Digital Barpeta`,
         },
       ],
     },
@@ -75,13 +95,14 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 }
 
 export default function ServiceDetailPage({ params }: ServicePageProps) {
-  const service = servicesData.find((s) => s.slug === params.slug);
+  const service = getServiceBySlug(params.slug);
 
   if (!service) {
     notFound();
   }
 
   const otherServices = servicesData.filter((s) => s.slug !== service.slug);
+  const relatedProjects = portfolioData.filter((p) => p.serviceSlug === service.slug || p.categoryLabel.toLowerCase().includes(service.slug.split('-')[0]));
 
   const serviceSchema = {
     '@context': 'https://schema.org',
@@ -92,34 +113,24 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
         description: service.fullDescription,
         url: `${SITE_URL}/services/${service.slug}`,
         provider: {
-          '@type': 'LocalBusiness',
+          '@type': 'Organization',
           name: siteConfig.brandName,
           url: SITE_URL,
           telephone: siteConfig.contact.phone,
           email: siteConfig.contact.email,
           logo: `${SITE_URL}/logo/digital_barpeta_logo.png`,
-          address: {
-            '@type': 'PostalAddress',
-            addressLocality: 'Barpeta',
-            addressRegion: 'Assam',
-            addressCountry: 'IN',
-          },
+          areaServed: [
+            {
+              '@type': 'AdministrativeArea',
+              name: 'Barpeta, Assam, India',
+            },
+            {
+              '@type': 'Country',
+              name: 'India',
+            },
+          ],
         },
         serviceType: service.title,
-        areaServed: [
-          {
-            '@type': 'City',
-            name: 'Barpeta',
-          },
-          {
-            '@type': 'AdministrativeArea',
-            name: 'Assam',
-          },
-          {
-            '@type': 'Country',
-            name: 'India',
-          },
-        ],
       },
       {
         '@type': 'BreadcrumbList',
@@ -195,7 +206,7 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
             {/* Service Number & Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green font-mono text-xs uppercase tracking-widest mb-6 shadow-glow-green">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>SERVICE {service.number} • DIGITAL BARPETA</span>
+              <span>ONLINE SERVICE {service.number} • DIGITAL BARPETA</span>
             </div>
 
             {/* Main Service H1 */}
@@ -211,10 +222,10 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
             {/* CTAs */}
             <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
               <Link
-                href="/#contact"
+                href="/contact"
                 className="btn-primary w-full sm:w-auto text-xs sm:text-sm uppercase tracking-wider py-4 px-8 font-bold shadow-glow-green flex items-center justify-center gap-2"
               >
-                <span>GET A PROPOSAL</span>
+                <span>GET A QUOTE</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
@@ -294,6 +305,41 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
                         <span className="text-xs text-zinc-300 font-medium leading-snug">
                           {audience}
                         </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Related Portfolio Projects */}
+              {relatedProjects.length > 0 && (
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight mb-4 flex items-center gap-2">
+                    <FolderGit2 className="w-5 h-5 text-brand-blue" />
+                    <span>Relevant Work Examples</span>
+                  </h2>
+                  <div className="space-y-3">
+                    {relatedProjects.slice(0, 2).map((proj) => (
+                      <div
+                        key={proj.id}
+                        className="p-5 rounded-2xl bg-dark-green/60 border border-white/10 hover:border-brand-green/30 transition-all"
+                      >
+                        <div className="flex items-center justify-between gap-2 mb-2">
+                          <h3 className="text-sm font-bold text-white">{proj.title}</h3>
+                          <span className="text-[10px] font-mono text-brand-green px-2 py-0.5 rounded bg-brand-green/10">
+                            {proj.categoryLabel}
+                          </span>
+                        </div>
+                        <p className="text-xs text-brand-muted leading-relaxed mb-3">
+                          {proj.description}
+                        </p>
+                        <Link
+                          href="/portfolio"
+                          className="inline-flex items-center gap-1.5 text-xs text-brand-green font-bold hover:underline"
+                        >
+                          <span>View Case Study in Portfolio</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
                       </div>
                     ))}
                   </div>
@@ -395,10 +441,10 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
                 {/* Direct CTA */}
                 <div className="mt-8 space-y-3">
                   <Link
-                    href="/#contact"
+                    href="/contact"
                     className="w-full btn-primary py-3.5 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2"
                   >
-                    <span>START THIS SERVICE</span>
+                    <span>START YOUR PROJECT</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
 

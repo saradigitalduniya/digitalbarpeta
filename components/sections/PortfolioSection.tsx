@@ -151,12 +151,20 @@ export const PortfolioSection: React.FC = () => {
           <p className="mt-2 text-sm text-brand-muted max-w-md">
             Ready to build a digital presence that dominates search results and turns visitors into loyal clients?
           </p>
-          <Link
-            href="/#contact"
-            className="btn-primary text-xs uppercase tracking-wider py-3 px-8 mt-6"
-          >
-            START YOUR PROJECT NOW
-          </Link>
+          <div className="mt-6 flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/portfolio"
+              className="btn-secondary text-xs uppercase tracking-wider py-3.5 px-8 font-semibold"
+            >
+              EXPLORE ALL CASE STUDIES →
+            </Link>
+            <Link
+              href="/contact"
+              className="btn-primary text-xs uppercase tracking-wider py-3.5 px-8 font-bold shadow-glow-green"
+            >
+              GET A FREE QUOTE
+            </Link>
+          </div>
         </motion.div>
 
       </div>

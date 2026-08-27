@@ -9,12 +9,12 @@ import { siteConfig } from '@/data/config';
 import { ConsultationModal } from './ConsultationModal';
 
 const navLinks = [
-  { name: 'SERVICES', href: '/#services' },
-  { name: 'WORK', href: '/#work' },
-  { name: 'ABOUT', href: '/#about' },
+  { name: 'SERVICES', href: '/services' },
+  { name: 'PORTFOLIO', href: '/portfolio' },
+  { name: 'ABOUT', href: '/about' },
   { name: 'PRICING', href: '/#pricing' },
   { name: 'BLOG', href: '/blog' },
-  { name: 'CONTACT', href: '/#contact' },
+  { name: 'CONTACT', href: '/contact' },
 ];
 
 export const Navbar: React.FC = () => {

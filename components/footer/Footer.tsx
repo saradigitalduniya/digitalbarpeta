@@ -56,14 +56,14 @@ export const Footer: React.FC = () => {
             </Link>
 
             <p className="text-xs text-brand-muted max-w-sm leading-relaxed">
-              Digital marketing, technology and growth solutions for modern businesses. We engineer high-speed websites, automated AI systems, and authoritative search strategies.
+              100% online digital agency originating from Barpeta, Assam. We engineer high-speed business websites, WordPress portals, Android apps, graphic designs, and digital marketing strategies.
             </p>
 
             {/* Direct Official Contact Summary */}
             <div className="pt-2 space-y-2 text-xs text-zinc-300">
               <div className="flex items-center gap-2.5">
                 <MapPin className="w-3.5 h-3.5 text-brand-green shrink-0" />
-                <span>{siteConfig.contact.address}</span>
+                <span>Barpeta, Assam, India (100% Online Services)</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-3.5 h-3.5 text-brand-green shrink-0" />
@@ -136,13 +136,18 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/#about" className="hover:text-brand-green transition-colors">
-                  About Us
+                <Link href="/about" className="hover:text-brand-green transition-colors">
+                  About Digital Barpeta
                 </Link>
               </li>
               <li>
-                <Link href="/#work" className="hover:text-brand-green transition-colors">
-                  Portfolio &amp; Work
+                <Link href="/services" className="hover:text-brand-green transition-colors">
+                  All Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/portfolio" className="hover:text-brand-green transition-colors">
+                  Portfolio &amp; Case Studies
                 </Link>
               </li>
               <li>
@@ -156,13 +161,8 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/#contact" className="hover:text-brand-green transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/#audit" className="hover:text-brand-green transition-colors">
-                  Free SEO Audit
+                <Link href="/contact" className="hover:text-brand-green transition-colors">
+                  Contact &amp; Quotes
                 </Link>
               </li>
             </ul>

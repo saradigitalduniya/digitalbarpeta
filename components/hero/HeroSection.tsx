@@ -74,7 +74,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
               transition={{ duration: 0.7, delay: 0.2 }}
               className="mt-6 text-base sm:text-lg md:text-xl text-brand-muted max-w-xl leading-relaxed font-normal"
             >
-              Digital Barpeta provides professional website development, graphic design, Android app development, WordPress, digital marketing, branding and data services for businesses in Barpeta, Assam and beyond.
+              Digital Barpeta provides website development, graphic design, Android apps, WordPress, digital marketing and branding services online from Barpeta, Assam.
             </motion.p>
 
             {/* Hero CTA Buttons */}
@@ -85,15 +85,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
               className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
             >
               <Link
-                href="/#contact"
+                href="/contact"
                 className="btn-primary w-full sm:w-auto text-xs sm:text-sm uppercase tracking-wider py-4 px-8 group font-bold shadow-glow-green"
               >
-                <span>START YOUR PROJECT</span>
+                <span>GET A QUOTE</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
 
               <Link
-                href="/#services"
+                href="/services"
                 className="btn-secondary w-full sm:w-auto text-xs sm:text-sm uppercase tracking-wider py-4 px-8 group font-semibold"
               >
                 <span>EXPLORE SERVICES</span>

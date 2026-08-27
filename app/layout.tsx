@@ -12,29 +12,37 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Digital Barpeta | Web Design, Graphic Design & Digital Marketing',
+    default: 'Digital Barpeta | Web Design, Graphic Design & Digital Services',
     template: '%s | Digital Barpeta',
   },
   description:
-    'Digital Barpeta provides professional website development, graphic design, Android app development, WordPress, digital marketing, branding and data services for businesses in Barpeta, Assam and beyond.',
+    'Digital Barpeta provides website development, graphic design, Android apps, WordPress, digital marketing and branding services online from Barpeta, Assam.',
   keywords: [
     'Digital Barpeta',
-    'Digital marketing Barpeta',
-    'Website development Barpeta',
-    'Web design Barpeta',
-    'Website developer Barpeta',
-    'Graphic design Barpeta',
-    'Graphic designer Barpeta',
+    'website development Barpeta',
+    'web design Barpeta',
+    'graphic design Barpeta',
+    'website developer Barpeta',
+    'web designer Barpeta',
+    'digital marketing Barpeta',
+    'WordPress developer Barpeta',
     'Android app development Barpeta',
-    'WordPress development Barpeta',
-    'Digital marketing Assam',
-    'Website development Assam',
-    'Graphic design Assam',
-    'Business website development Assam',
-    'Website designer Assam',
-    'Android app developer Assam',
-    'Data entry services Barpeta',
-    'Branding services Barpeta',
+    'branding services Barpeta',
+    'website development Assam',
+    'web design Assam',
+    'graphic design Assam',
+    'digital marketing Assam',
+    'WordPress developer Assam',
+    'Android app development Assam',
+    'website designer Assam',
+    'branding agency Assam',
+    'website development India',
+    'WordPress development India',
+    'graphic design services India',
+    'Android app development India',
+    'digital marketing services India',
+    'business website development India',
+    'data entry services Barpeta',
   ],
   authors: [{ name: 'Digital Barpeta', url: SITE_URL }],
   creator: 'Digital Barpeta',
@@ -53,24 +61,24 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
     url: SITE_URL,
-    title: 'Digital Barpeta | Web Design, Graphic Design & Digital Marketing',
+    title: 'Digital Barpeta | Web Design, Graphic Design & Digital Services',
     description:
-      'Digital Barpeta provides professional website development, graphic design, Android app development, WordPress, digital marketing, branding and data services for businesses in Barpeta, Assam and beyond.',
+      'Digital Barpeta provides website development, graphic design, Android apps, WordPress, digital marketing and branding services online from Barpeta, Assam.',
     siteName: 'Digital Barpeta',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Digital Barpeta | Web Design, Graphic Design & Digital Marketing Agency',
+        alt: 'Digital Barpeta | Web Design, Graphic Design & Digital Services Agency',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Digital Barpeta | Web Design, Graphic Design & Digital Marketing',
+    title: 'Digital Barpeta | Web Design, Graphic Design & Digital Services',
     description:
-      'Digital Barpeta provides professional website development, graphic design, Android app development, WordPress, digital marketing, branding and data services for businesses in Barpeta, Assam and beyond.',
+      'Digital Barpeta provides website development, graphic design, Android apps, WordPress, digital marketing and branding services online from Barpeta, Assam.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -99,7 +107,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Verified Organization, LocalBusiness, and WebSite JSON-LD Structured Data
+// Truthful Organization and WebSite JSON-LD Structured Data (100% Online Agency Model)
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -113,39 +121,25 @@ const structuredData = {
       description: siteConfig.fullDescription,
       email: siteConfig.contact.email,
       telephone: siteConfig.contact.phone,
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Barpeta',
-        addressRegion: 'Assam',
-        addressCountry: 'IN',
-      },
+      areaServed: [
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Barpeta, Assam, India',
+        },
+        {
+          '@type': 'Country',
+          name: 'India',
+        },
+      ],
       contactPoint: [
         {
           '@type': 'ContactPoint',
           telephone: siteConfig.contact.phone,
-          contactType: 'customer service',
+          contactType: 'customer support and inquiries',
           email: siteConfig.contact.email,
-          areaServed: 'IN',
-          availableLanguage: ['English', 'Assamese', 'Hindi'],
+          availableLanguage: ['English', 'Assamese', 'Hindi', 'Bengali'],
         },
       ],
-    },
-    {
-      '@type': ['LocalBusiness', 'ProfessionalService'],
-      '@id': `${SITE_URL}/#localbusiness`,
-      name: siteConfig.brandName,
-      url: SITE_URL,
-      logo: `${SITE_URL}/logo/digital_barpeta_logo.png`,
-      image: `${SITE_URL}/character/digital_barpeta_character.png`,
-      description: siteConfig.fullDescription,
-      telephone: siteConfig.contact.phone,
-      email: siteConfig.contact.email,
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Barpeta',
-        addressRegion: 'Assam',
-        addressCountry: 'IN',
-      },
     },
     {
       '@type': 'WebSite',

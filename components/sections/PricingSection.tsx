@@ -97,7 +97,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPlan }) 
                 {/* Plan CTA */}
                 <div className="mt-8 pt-6 border-t border-white/10">
                   <Link
-                    href="/#contact"
+                    href="/contact"
                     className={`w-full py-3.5 rounded-full text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all ${
                       plan.isPopular
                         ? 'btn-primary shadow-glow-green'
