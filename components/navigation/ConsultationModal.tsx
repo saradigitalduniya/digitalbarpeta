@@ -117,10 +117,11 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
 
                 <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                   <div>
-                    <label className="block text-xs font-semibold text-brand-muted mb-1">
+                    <label htmlFor="modal-name" className="block text-xs font-semibold text-brand-muted mb-1">
                       Your Name *
                     </label>
                     <input
+                      id="modal-name"
                       type="text"
                       required
                       placeholder="e.g. John Doe"
@@ -132,10 +133,11 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-brand-muted mb-1">
+                      <label htmlFor="modal-email" className="block text-xs font-semibold text-brand-muted mb-1">
                         Email Address *
                       </label>
                       <input
+                        id="modal-email"
                         type="email"
                         required
                         placeholder="john@example.com"
@@ -145,12 +147,13 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-brand-muted mb-1">
+                      <label htmlFor="modal-phone" className="block text-xs font-semibold text-brand-muted mb-1">
                         Phone / WhatsApp
                       </label>
                       <input
+                        id="modal-phone"
                         type="tel"
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 93941 95533"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full px-4 py-2.5 rounded-xl bg-dark-green/60 border border-white/10 text-white placeholder-zinc-600 focus:outline-none focus:border-brand-green text-sm"
@@ -159,30 +162,32 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-brand-muted mb-1">
+                    <label htmlFor="modal-service" className="block text-xs font-semibold text-brand-muted mb-1">
                       Primary Service Interest
                     </label>
                     <select
+                      id="modal-service"
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-xl bg-dark-green/60 border border-white/10 text-white focus:outline-none focus:border-brand-green text-sm"
                     >
-                      <option value="SEO & Search Growth">SEO &amp; Search Growth</option>
-                      <option value="Web Design & Development">Web Design &amp; Development</option>
+                      <option value="SEO & Search Growth">SEO &amp; Search Growth in Barpeta</option>
+                      <option value="Web Design & Development">Website Development &amp; Web Design</option>
                       <option value="AI Marketing">AI Marketing &amp; Automation</option>
-                      <option value="Software & App Development">Software &amp; App Development</option>
-                      <option value="Logo & Brand Design">Logo &amp; Brand Design</option>
-                      <option value="Digital Marketing">Digital Marketing &amp; Ads</option>
-                      <option value="Optimization & Tune-Up">Optimization &amp; Tune-Up</option>
+                      <option value="Software & App Development">Android App &amp; Software Development</option>
+                      <option value="Logo & Brand Design">Graphic Design &amp; Logo Branding</option>
+                      <option value="Digital Marketing">Digital Marketing &amp; Social Media</option>
+                      <option value="Optimization & Tune-Up">Website Speed Optimization</option>
                       <option value="Maintenance & Support">Website Maintenance &amp; Support</option>
                     </select>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-brand-muted mb-1">
+                    <label htmlFor="modal-details" className="block text-xs font-semibold text-brand-muted mb-1">
                       Project Goals / Notes
                     </label>
                     <textarea
+                      id="modal-details"
                       rows={3}
                       placeholder="Tell us about your business goals, target timeline, or current website URL..."
                       value={formData.details}

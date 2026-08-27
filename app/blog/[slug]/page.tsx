@@ -45,6 +45,7 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
     },
     openGraph: {
       type: 'article',
+      locale: 'en_IN',
       title,
       description,
       url: `${SITE_URL}/blog/${post.slug}`,
@@ -54,7 +55,7 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
           url: '/og-image.png',
           width: 1200,
           height: 630,
-          alt: `${post.title} - Digital Barpeta`,
+          alt: `${post.title} - Digital Barpeta Blog`,
         },
       ],
     },

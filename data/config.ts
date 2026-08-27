@@ -35,9 +35,9 @@ export const siteConfig: BrandConfig = {
   brandName: 'Digital Barpeta',
   tagline: 'BUILD. GROW. DOMINATE.',
   shortDescription:
-    'We create high-performance websites, powerful brands, SEO strategies and intelligent digital solutions that help businesses grow online.',
+    'Digital Barpeta provides professional website development, graphic design, Android app development, WordPress, digital marketing, branding and data services for businesses in Barpeta, Assam and beyond.',
   fullDescription:
-    'Digital Barpeta is a digital marketing and technology agency focused on helping businesses establish, improve and grow their online presence. From SEO and web development to AI marketing, software, apps and branding, we bring strategy, creativity and technology together to create practical digital solutions.',
+    'Digital Barpeta is a digital solutions and creative agency based in Barpeta, Assam, India. We specialize in custom website development, graphic design, Android app development, WordPress websites, digital marketing, brand identity design, and data management solutions designed to help local and regional businesses establish and scale their online presence.',
 
   // Official Verified Agency Contact Details
   contact: {

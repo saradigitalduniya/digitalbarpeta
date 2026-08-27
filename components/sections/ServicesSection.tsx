@@ -218,8 +218,8 @@ export const ServicesSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight uppercase"
           >
-            <span>DIGITAL SOLUTIONS</span>
-            <span className="block text-gradient-green">BUILT TO GROW.</span>
+            <span>CORE SERVICES &amp;</span>
+            <span className="block text-gradient-green">DIGITAL SOLUTIONS.</span>
           </motion.h2>
 
           <motion.p
@@ -229,7 +229,7 @@ export const ServicesSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-5 text-sm sm:text-base text-brand-muted leading-relaxed"
           >
-            From search visibility to high-performance websites and digital products, Digital Barpeta builds technology that helps businesses move forward.
+            From custom website development and graphic design to Android apps, WordPress, SEO, and digital marketing, Digital Barpeta delivers high-performance solutions engineered for local and regional business growth.
           </motion.p>
         </div>
 

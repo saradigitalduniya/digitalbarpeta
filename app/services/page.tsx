@@ -9,33 +9,34 @@ import { Footer } from '@/components/footer/Footer';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
 
 export const metadata: Metadata = {
-  title: 'Digital Services & Technology Solutions | Digital Barpeta',
+  title: 'Digital Agency Services in Barpeta | Web Design, SEO & Apps',
   description:
-    'Explore Digital Barpeta’s 8 primary digital agency services: SEO, web design, AI marketing, software development, branding, digital marketing, optimization, and maintenance.',
+    'Explore Digital Barpeta’s full spectrum of digital services: Website Development, Graphic Design, Android App Development, WordPress, Local SEO, and Digital Marketing for businesses in Barpeta and Assam.',
   alternates: {
     canonical: `${SITE_URL}/services`,
   },
   openGraph: {
     type: 'website',
+    locale: 'en_IN',
     url: `${SITE_URL}/services`,
-    title: 'Digital Services & Technology Solutions | Digital Barpeta',
+    title: 'Digital Agency Services in Barpeta | Web Design, SEO & Apps',
     description:
-      'Explore Digital Barpeta’s 8 primary digital agency services: SEO, web design, AI marketing, software development, branding, digital marketing, optimization, and maintenance.',
+      'Explore Digital Barpeta’s full spectrum of digital services: Website Development, Graphic Design, Android App Development, WordPress, Local SEO, and Digital Marketing for businesses in Barpeta and Assam.',
     siteName: 'Digital Barpeta',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Digital Barpeta Services',
+        alt: 'Digital Barpeta Agency Services',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Digital Services & Technology Solutions | Digital Barpeta',
+    title: 'Digital Agency Services in Barpeta | Web Design, SEO & Apps',
     description:
-      'Explore Digital Barpeta’s 8 primary digital agency services: SEO, web design, AI marketing, software development, branding, digital marketing, optimization, and maintenance.',
+      'Explore Digital Barpeta’s full spectrum of digital services: Website Development, Graphic Design, Android App Development, WordPress, Local SEO, and Digital Marketing for businesses in Barpeta and Assam.',
     images: ['/og-image.png'],
   },
 };

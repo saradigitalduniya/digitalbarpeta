@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
+    locale: 'en_IN',
     url: `${SITE_URL}/blog`,
     title: 'Digital Growth Journal & Insights | Digital Barpeta',
     description:

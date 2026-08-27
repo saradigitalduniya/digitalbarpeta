@@ -52,7 +52,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dark-green/90 border border-brand-green/40 shadow-glow-green text-xs font-mono tracking-widest text-brand-green uppercase mb-6"
             >
               <span className="w-2 h-2 rounded-full bg-brand-green-bright animate-ping" />
-              <span>DIGITAL MARKETING • TECHNOLOGY • GROWTH</span>
+              <span>DIGITAL AGENCY • BARPETA, ASSAM</span>
             </motion.div>
 
             {/* Main Headline: BUILD. GROW. DOMINATE. */}
@@ -74,7 +74,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
               transition={{ duration: 0.7, delay: 0.2 }}
               className="mt-6 text-base sm:text-lg md:text-xl text-brand-muted max-w-xl leading-relaxed font-normal"
             >
-              We create high-performance websites, powerful brands, SEO strategies and intelligent digital solutions that help businesses grow online.
+              Digital Barpeta provides professional website development, graphic design, Android app development, WordPress, digital marketing, branding and data services for businesses in Barpeta, Assam and beyond.
             </motion.p>
 
             {/* Hero CTA Buttons */}

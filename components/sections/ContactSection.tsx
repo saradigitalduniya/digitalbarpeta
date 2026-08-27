@@ -262,10 +262,11 @@ export const ContactSection: React.FC = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-zinc-300 mb-1.5">
+                      <label htmlFor="contact-name" className="block text-xs font-bold text-zinc-300 mb-1.5">
                         Name *
                       </label>
                       <input
+                        id="contact-name"
                         type="text"
                         required
                         placeholder="Your full name"
@@ -276,10 +277,11 @@ export const ContactSection: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-zinc-300 mb-1.5">
+                      <label htmlFor="contact-business" className="block text-xs font-bold text-zinc-300 mb-1.5">
                         Business Name
                       </label>
                       <input
+                        id="contact-business"
                         type="text"
                         placeholder="Company / Brand"
                         value={formData.businessName}
@@ -291,10 +293,11 @@ export const ContactSection: React.FC = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-zinc-300 mb-1.5">
+                      <label htmlFor="contact-email" className="block text-xs font-bold text-zinc-300 mb-1.5">
                         Email *
                       </label>
                       <input
+                        id="contact-email"
                         type="email"
                         required
                         placeholder="email@example.com"
@@ -305,12 +308,13 @@ export const ContactSection: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-zinc-300 mb-1.5">
+                      <label htmlFor="contact-phone" className="block text-xs font-bold text-zinc-300 mb-1.5">
                         Phone / WhatsApp
                       </label>
                       <input
+                        id="contact-phone"
                         type="tel"
-                        placeholder="Phone number"
+                        placeholder="Phone number (e.g. 9394195533)"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl bg-dark-green/70 border border-white/10 text-white placeholder-zinc-600 focus:outline-none focus:border-brand-green text-sm"
@@ -320,10 +324,11 @@ export const ContactSection: React.FC = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-zinc-300 mb-1.5">
+                      <label htmlFor="contact-service" className="block text-xs font-bold text-zinc-300 mb-1.5">
                         Service *
                       </label>
                       <select
+                        id="contact-service"
                         value={formData.service}
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl bg-dark-green/70 border border-white/10 text-white focus:outline-none focus:border-brand-green text-sm"
@@ -337,10 +342,11 @@ export const ContactSection: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-zinc-300 mb-1.5">
+                      <label htmlFor="contact-budget" className="block text-xs font-bold text-zinc-300 mb-1.5">
                         Budget
                       </label>
                       <select
+                        id="contact-budget"
                         value={formData.budget}
                         onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl bg-dark-green/70 border border-white/10 text-white focus:outline-none focus:border-brand-green text-sm"
@@ -355,10 +361,11 @@ export const ContactSection: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-zinc-300 mb-1.5">
+                    <label htmlFor="contact-details" className="block text-xs font-bold text-zinc-300 mb-1.5">
                       Project Details *
                     </label>
                     <textarea
+                      id="contact-details"
                       rows={4}
                       required
                       placeholder="Describe your project vision, timeline, current challenges or desired outcomes..."

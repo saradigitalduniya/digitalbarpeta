@@ -10,6 +10,8 @@ import {
   Zap,
   Compass,
   MessageCircle,
+  Users,
+  HelpCircle,
 } from 'lucide-react';
 import { servicesData } from '@/data/services';
 import { siteConfig, SITE_URL } from '@/data/config';
@@ -49,6 +51,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     },
     openGraph: {
       type: 'website',
+      locale: 'en_IN',
       title,
       description,
       url: `${SITE_URL}/services/${service.slug}`,
@@ -58,7 +61,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
           url: '/og-image.png',
           width: 1200,
           height: 630,
-          alt: `${service.title} - Digital Barpeta`,
+          alt: `${service.title} - Digital Barpeta Assam`,
         },
       ],
     },
@@ -89,16 +92,34 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
         description: service.fullDescription,
         url: `${SITE_URL}/services/${service.slug}`,
         provider: {
-          '@type': 'Organization',
+          '@type': 'LocalBusiness',
           name: siteConfig.brandName,
           url: SITE_URL,
+          telephone: siteConfig.contact.phone,
+          email: siteConfig.contact.email,
           logo: `${SITE_URL}/logo/digital_barpeta_logo.png`,
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Barpeta',
+            addressRegion: 'Assam',
+            addressCountry: 'IN',
+          },
         },
         serviceType: service.title,
-        areaServed: {
-          '@type': 'AdministrativeArea',
-          name: 'Assam, India',
-        },
+        areaServed: [
+          {
+            '@type': 'City',
+            name: 'Barpeta',
+          },
+          {
+            '@type': 'AdministrativeArea',
+            name: 'Assam',
+          },
+          {
+            '@type': 'Country',
+            name: 'India',
+          },
+        ],
       },
       {
         '@type': 'BreadcrumbList',
@@ -123,6 +144,21 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
           },
         ],
       },
+      ...(service.faqs && service.faqs.length > 0
+        ? [
+            {
+              '@type': 'FAQPage',
+              mainEntity: service.faqs.map((faq) => ({
+                '@type': 'Question',
+                name: faq.question,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: faq.answer,
+                },
+              })),
+            },
+          ]
+        : []),
     ],
   };
 
@@ -198,13 +234,13 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
         </div>
       </section>
 
-      {/* Main Content: Overview, Capabilities & Deliverables */}
+      {/* Main Content: Overview, Methodology, Deliverables & Benefits */}
       <section className="py-20 bg-background-secondary/80 border-t border-b border-white/5 relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
-            {/* Left Col: Overview & Methodology (7 cols) */}
+            {/* Left Col: Overview, Benefits, Target Audience & Methodology (7 cols) */}
             <div className="lg:col-span-7 space-y-12">
               
               {/* Comprehensive Overview */}
@@ -217,6 +253,52 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
                   {service.fullDescription}
                 </p>
               </div>
+
+              {/* Key Benefits */}
+              {service.benefits && service.benefits.length > 0 && (
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight mb-4 flex items-center gap-2">
+                    <Sparkles className="w-5 h-5 text-brand-green" />
+                    <span>Key Business Benefits</span>
+                  </h2>
+                  <div className="space-y-3">
+                    {service.benefits.map((benefit, bIdx) => (
+                      <div
+                        key={bIdx}
+                        className="p-4 rounded-2xl bg-dark-green/60 border border-white/5 flex items-start gap-3 hover:border-brand-green/30 transition-colors"
+                      >
+                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0 mt-0.5" />
+                        <span className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-medium">
+                          {benefit}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Who This Is For (Target Audience / Use Cases) */}
+              {service.targetAudience && service.targetAudience.length > 0 && (
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight mb-4 flex items-center gap-2">
+                    <Users className="w-5 h-5 text-brand-purple" />
+                    <span>Who This Is Ideal For</span>
+                  </h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {service.targetAudience.map((audience, aIdx) => (
+                      <div
+                        key={aIdx}
+                        className="p-4 rounded-2xl bg-dark-green/50 border border-white/5 flex items-center gap-2.5"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-purple shrink-0" />
+                        <span className="text-xs text-zinc-300 font-medium leading-snug">
+                          {audience}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Methodology Roadmap */}
               <div>
@@ -242,6 +324,35 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
                   ))}
                 </div>
               </div>
+
+              {/* Service FAQ Accordion */}
+              {service.faqs && service.faqs.length > 0 && (
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight mb-6 flex items-center gap-2">
+                    <HelpCircle className="w-5 h-5 text-brand-green" />
+                    <span>Frequently Asked Questions</span>
+                  </h2>
+
+                  <div className="space-y-3">
+                    {service.faqs.map((faq, fIdx) => (
+                      <details
+                        key={fIdx}
+                        className="group rounded-2xl bg-dark-green/60 border border-white/10 p-5 open:border-brand-green/40 transition-colors"
+                      >
+                        <summary className="text-sm font-bold text-white cursor-pointer list-none flex items-center justify-between gap-4">
+                          <span>{faq.question}</span>
+                          <span className="text-brand-green font-mono text-xs group-open:rotate-180 transition-transform">
+                            ▼
+                          </span>
+                        </summary>
+                        <p className="mt-3 text-xs sm:text-sm text-brand-muted leading-relaxed pt-3 border-t border-white/5">
+                          {faq.answer}
+                        </p>
+                      </details>
+                    ))}
+                  </div>
+                </div>
+              )}
 
             </div>
 
@@ -282,7 +393,7 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
                 </div>
 
                 {/* Direct CTA */}
-                <div className="mt-8">
+                <div className="mt-8 space-y-3">
                   <Link
                     href="/#contact"
                     className="w-full btn-primary py-3.5 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2"
@@ -290,6 +401,18 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
                     <span>START THIS SERVICE</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
+
+                  <a
+                    href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(
+                      `Hello Digital Barpeta, I want to discuss ${service.title}.`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full btn-secondary py-3 text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5 text-brand-green" />
+                    <span>Instant WhatsApp Quote</span>
+                  </a>
                 </div>
               </div>
 
