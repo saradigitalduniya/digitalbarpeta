@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     'business website development India',
     'data entry services Barpeta',
   ],
-  authors: [{ name: 'Digital Barpeta', url: SITE_URL }],
+  authors: [{ name: 'Digital Barpeta', url: `${SITE_URL}/` }],
   creator: 'Digital Barpeta',
   publisher: 'Digital Barpeta',
   applicationName: 'Digital Barpeta',
   manifest: '/site.webmanifest',
   alternates: {
-    canonical: SITE_URL,
+    canonical: `${SITE_URL}/`,
   },
   formatDetection: {
     email: false,
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
     title: 'Digital Barpeta | Web Design, Graphic Design & Digital Services',
     description:
       'Digital Barpeta provides website development, graphic design, Android apps, WordPress, digital marketing and branding services online from Barpeta, Assam.',
@@ -115,7 +115,7 @@ const structuredData = {
       '@type': 'Organization',
       '@id': `${SITE_URL}/#organization`,
       name: siteConfig.brandName,
-      url: SITE_URL,
+      url: `${SITE_URL}/`,
       logo: `${SITE_URL}/logo/digital_barpeta_logo.png`,
       image: `${SITE_URL}/character/digital_barpeta_character.png`,
       description: siteConfig.fullDescription,
@@ -144,8 +144,12 @@ const structuredData = {
     {
       '@type': 'WebSite',
       '@id': `${SITE_URL}/#website`,
-      url: SITE_URL,
+      url: `${SITE_URL}/`,
       name: siteConfig.brandName,
+      alternateName: [
+        'Digital Barpeta',
+        'digitalbarpeta.vercel.app',
+      ],
       description: siteConfig.shortDescription,
       publisher: {
         '@id': `${SITE_URL}/#organization`,
